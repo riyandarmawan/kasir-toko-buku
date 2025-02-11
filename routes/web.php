@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\DashboardController;
+
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/auth/login', 'login')->name('login');
+    Route::post('/auth/login', 'postLogin');
+    Route::post('/auth/logout', 'logout');
+});
+
+Route::middleware('auth:pengguna')->group(function () {
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/dashboard', 'index');
+    });
+
+    Route::controller(BukuController::class)->group(function () {
+        Route::get('/dashboard/buku', 'index');
+        Route::get('/dashboard/buku/tambah', 'create');
+        Route::post('/dashboard/buku/tambah', 'store');
+        Route::get('/dashboard/buku/ubah/{kode_buku}', 'update');
+        Route::post('/dashboard/buku/ubah/{kode_buku}', 'change');
+        Route::post('/dashboard/buku/hapus/{kode_buku}', 'delete');
+    });
+
+    Route::controller(PenggunaController::class)->group(function () {
+        Route::get('/dashboard/petugas', 'index');
+        Route::get('/dashboard/petugas/tambah', 'create');
+        Route::post('/dashboard/petugas/tambah', 'store');
+        Route::get('/dashboard/petugas/ubah/{id}', 'update');
+        Route::post('/dashboard/petugas/ubah/{id}', 'change');
+        Route::post('/dashboard/petugas/hapus/{id}', 'delete');
+    });
+});
+
