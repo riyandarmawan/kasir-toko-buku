@@ -1,6 +1,6 @@
 <x-dashboard.layout :$title>
-    <h3 class="mb-4">Daftar Petugas</h3>
-    <a href="/dashboard/petugas/tambah" class="btn-primary">Tambah Petugas</a>
+    <h3 class="mb-4 text-gray-900 dark:text-gray-100">Daftar Transaksi</h3>
+    <a href="/dashboard/transaksi/tambah" class="btn-primary">Tambah Transaksi</a>
 
     @if (session('success'))
         <div class="mb-6 mt-2 w-full rounded bg-green-500/50 px-4 py-2 shadow">
@@ -13,38 +13,37 @@
             <thead class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        Username
+                        Kasir
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Role
+                        Total Harga
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Aksi
+                        Tanggal
                     </th>
+                        <th scope="col" class="px-6 py-3">
+                            Aksi
+                        </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($petugases as $petugas)
+                @foreach ($transaksis as $transaksi)
                     <tr class="border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
                         <th scope="row"
                             class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
-                            {{ $petugas->username }}
+                            {{ $transaksi->pengguna->username }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $petugas->role }}
+                                   Rp {{ number_format($transaksi->total_harga, 0, ',', '.') }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $transaksi->tanggal }}
                         </td>
                         <td class="flex px-6 py-4">
-                            <a href="/dashboard/petugas/ubah/{{ $petugas->kode_buku }}"
-                                class="btn-warning flex items-center justify-center !p-2">
-                                <span class="i-mdi-pen text-gray-900"></span>
+                            <a href="/dashboard/transaksi/detail/{{ $transaksi->id }}"
+                                class="btn-safe flex items-center justify-center">
+                                <span>Detail Transaksi</span>
                             </a>
-                            <form action="/dashboard/petugas/hapus/{{ $petugas->kode_buku }}" method="post">
-                                @csrf
-                                <button type="submit" onclick="return confirm('Apakah anda ingin menghapus petugas ini?')"
-                                    class="btn-danger flex items-center justify-center !p-2">
-                                    <span class="i-mdi-trash text-gray-100"></span>
-                                </button>
-                            </form>
                         </td>
                     </tr>
                 @endforeach
@@ -52,6 +51,6 @@
         </table>
     </div>
 
-    {{ $petugases->links() }}
+    {{ $transaksis->links() }}
 
 </x-dashboard.layout>

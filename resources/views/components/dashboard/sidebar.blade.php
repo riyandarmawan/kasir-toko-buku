@@ -21,39 +21,23 @@
         <ul class="space-y-2">
             <li>
                 <a href="/dashboard"
-                    class="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ Request::is('dashboard') ? 'bg-gray-100 dark:bg-gray-700' : '' }}">
-                    <svg aria-hidden="true"
-                        class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white {{ Request::is('dashboard') ? 'text-gray-900' : '' }}"
-                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-                    </svg>
+                    class="{{ Request::is('dashboard') ? 'bg-gray-100 dark:bg-gray-700' : '' }} group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <span class="{{ Request::is('dashboard') ? 'text-gray-900' : '' }} h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white i-mdi-chart-pie"></span>
                     <span class="ml-3">Dashboard</span>
                 </a>
             </li>
             <li>
                 <a href="/dashboard/buku"
-                    class="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ Request::is('dashboard/buku*') ? 'bg-gray-100 dark:bg-gray-700' : '' }}">
-                    <svg aria-hidden="true"
-                        class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white {{ Request::is('dashboard/buku*') ? 'text-gray-900' : '' }}"
-                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4" />
-                    </svg>
+                    class="{{ Request::is('dashboard/buku*') ? 'bg-gray-100 dark:bg-gray-700' : '' }} group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <span class="{{ Request::is('dashboard/buku*') ? 'text-gray-900' : '' }} h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white i-mdi-books"></span>
                     <span class="ml-3">Buku</span>
                 </a>
             </li>
             <li>
-                <a href="/dashboard/petugas"
-                    class="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ Request::is('dashboard/petugas*') ? 'bg-gray-100 dark:bg-gray-700' : '' }}">
-                    <svg aria-hidden="true"
-                        class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white {{ Request::is('dashboard/petugas*') ? 'text-gray-900' : '' }}"
-                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                    </svg>
-                    <span class="ml-3">Petugas</span>
+                <a href="/dashboard/transaksi"
+                    class="{{ Request::is('dashboard/transaksi*') ? 'bg-gray-100 dark:bg-gray-700' : '' }} group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <span class="{{ Request::is('dashboard/transaksi*') ? 'text-gray-900' : '' }} h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white i-mdi-cart"></span>
+                    <span class="ml-3">Transaksi</span>
                 </a>
             </li>
         </ul>

@@ -14,6 +14,8 @@ class TransaksiSeeder extends Seeder
      */
     public function run(): void
     {
-        Transaksi::factory(10)->recycle([Pengguna::all()])->create();
+        Transaksi::factory(1)->create(['tanggal' => '2025-01-08 10:30:00', 'total_harga' => '270000', 'id_pengguna' => 2]);
+
+        // Transaksi::factory(10)->recycle([Pengguna::all()])->create();
     }
 }

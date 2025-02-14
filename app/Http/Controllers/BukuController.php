@@ -12,6 +12,7 @@ class BukuController extends Controller
         $data = [
             'title' => 'Daftar Buku',
             'bukus' => Buku::paginate(10),
+            'isKasir' => auth('pengguna')->user()->role === 'kasir',
         ];
 
         return view('pages.dashboard.buku.index', $data);

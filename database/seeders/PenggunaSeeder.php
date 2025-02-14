@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Pengguna;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Hash;
 
 class PenggunaSeeder extends Seeder
 {
@@ -13,9 +14,9 @@ class PenggunaSeeder extends Seeder
      */
     public function run(): void
     {
-        Pengguna::factory(1)->create(['username'=>'admin','role' => 'admin']);
-        Pengguna::factory(1)->create(['username'=>'kasir','role' => 'kasir']);
+        Pengguna::factory(1)->create(['username'=>'admin', 'password' => Hash::make('admin123'),'role' => 'admin']);
+        Pengguna::factory(1)->create(['username'=>'kasir1', 'password' => Hash::make('kasir123'),'role' => 'kasir']);
 
-        Pengguna::factory(10)->create();
+        // Pengguna::factory(10)->create();
     }
 }

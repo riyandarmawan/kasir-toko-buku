@@ -3,35 +3,39 @@
 @tailwind utilities;
 
 body {
-    @apply font-inter
+    @apply font-inter;
 }
 
 h1 {
-    @apply text-5xl font-bold
+    @apply text-5xl font-bold;
 }
 
 h2 {
-    @apply text-4xl font-bold
+    @apply text-4xl font-bold;
 }
 
 h3 {
-    @apply text-3xl font-semibold
+    @apply text-3xl font-semibold;
 }
 
 h4 {
-    @apply text-2xl font-semibold
+    @apply text-2xl font-semibold;
 }
 
 h5 {
-    @apply text-xl font-medium
+    @apply text-xl font-medium;
 }
 
 h6 {
-    @apply text-lg font-medium
+    @apply text-lg font-medium;
 }
 
 .btn-primary {
-    @apply inline-block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800
+    @apply inline-block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800;
+}
+
+.btn-safe {
+    @apply inline-block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800;
 }
 
 .btn-warning {
@@ -40,4 +44,10 @@ h6 {
 
 .btn-danger {
     @apply focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900;
+}
+
+.transaction-form input:read-only,
+.transaction-form input:disabled,
+.transaction-form select:read-only {
+    @apply bg-gray-300 dark:bg-gray-500;
 }

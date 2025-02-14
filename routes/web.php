@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransaksiController;
 
 
 Route::controller(AuthController::class)->group(function () {
@@ -27,13 +28,10 @@ Route::middleware('auth:pengguna')->group(function () {
         Route::post('/dashboard/buku/hapus/{kode_buku}', 'delete');
     });
 
-    Route::controller(PenggunaController::class)->group(function () {
-        Route::get('/dashboard/petugas', 'index');
-        Route::get('/dashboard/petugas/tambah', 'create');
-        Route::post('/dashboard/petugas/tambah', 'store');
-        Route::get('/dashboard/petugas/ubah/{id}', 'update');
-        Route::post('/dashboard/petugas/ubah/{id}', 'change');
-        Route::post('/dashboard/petugas/hapus/{id}', 'delete');
+    Route::controller(TransaksiController::class)->group(function () {
+        Route::get('/dashboard/transaksi', 'index');
+        Route::get('/dashboard/transaksi/tambah', 'create');
+        Route::post('/dashboard/transaksi/tambah', 'store');
     });
 });
 

@@ -15,6 +15,9 @@ class DetailTransaksiSeeder extends Seeder
      */
     public function run(): void
     {
-        DetailTransaksi::factory(10)->recycle([Transaksi::all(), Buku::all()])->create();
+        DetailTransaksi::factory(1)->create(['id_transaksi' => 1, 'id_buku' => 1, 'jumlah' => 1, 'subtotal' => '120000']);
+        DetailTransaksi::factory(1)->create(['id_transaksi' => 1, 'id_buku' => 3, 'jumlah' => 1, 'subtotal' => '150000']);
+
+        // DetailTransaksi::factory(10)->recycle([Transaksi::all(), Buku::all()])->create();
     }
 }

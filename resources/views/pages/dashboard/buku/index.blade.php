@@ -1,6 +1,6 @@
 <x-dashboard.layout :$title>
-    <h3 class="mb-4">Daftar Buku</h3>
-    <a href="/dashboard/buku/tambah" class="btn-primary">Tambah Buku</a>
+    <h3 class="mb-4 text-gray-900 dark:text-gray-100">Daftar Buku</h3>
+        <a hresf="/dashboard/buku/tambah" class="btn-primary">Tambah Buku</a>
 
     @if (session('success'))
         <div class="mb-6 mt-2 w-full rounded bg-green-500/50 px-4 py-2 shadow">
@@ -27,9 +27,9 @@
                     <th scope="col" class="px-6 py-3">
                         Stok
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        Aksi
-                    </th>
+                        <th scope="col" class="px-6 py-3">
+                            Aksi
+                        </th>
                 </tr>
             </thead>
             <tbody>
